@@ -52,6 +52,7 @@ function checkWin(p1, p2) {
             document.querySelector('#info').style.paddingTop = '2px';
             document.querySelector('#info').style.paddingBottom = '2px';
             document.querySelector('#info').style.color = 'rgb(255 24 24)';
+            document.querySelector('.container').style.pointerEvents = "none";
             winaudio.play();
         }
     })
@@ -67,19 +68,49 @@ Array.from(boxes).forEach(element => {
         if (boxtext.innerText === '') {
             boxtext.innerText = turn;
             turn = changeturn();
+            
             var name;
             if (turn === "X") {
                 name = p1;
             }
             else { name = p2 }
             checkWin(p1, p2);
+            draw();
             if (!gameover) {
-                document.getElementById("info").innerText = "Turn for " + name;
+                document.querySelector(".info").innerText = "Turn for " + name;
             }
         }
     })
 });
 
+function draw(){
+    
+    let cnt=0;
+    // let i=0;
+let x = document.querySelectorAll(".box");
+// let boxtex   = element.querySelector('.boxText');
+    // console.log(x[0].innerText)
+
+// while(i<10){
+//     if(x[i].innerText !== ""){
+//         cnt++
+//         // console.log(cnt)
+//     }
+//     // console.log(x[i])
+//     i++;
+// }
+x.forEach(element=>{
+    if(element.innerText !==''){
+        cnt++
+    }
+})
+
+if(cnt===9){
+    document.getElementById("info").innerText = "Match Tied" ;
+
+}
+
+}
 // reset btn
 function reset() {
     // alert('dds')
@@ -98,6 +129,8 @@ function reset() {
     document.querySelector('#info').style.paddingBottom = '14px';
     var p1 = document.querySelector('#p1').value;
     document.getElementById("info").innerText = "Turn for " + p1;
+    document.querySelector('.container').style.pointerEvents = "auto";
+
 }
 
 //  taking name
