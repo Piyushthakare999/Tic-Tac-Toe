@@ -1,0 +1,255 @@
+body{
+    padding: 0;
+    margin: 0;
+    background-image: url(/assets/xobg.jpg);
+    background-repeat: repeat;
+    background-size: 150px;
+}
+:root{
+    --main: #5cc6ffd4;
+    --border: #32b7ff;
+}
+
+/* nav bar */
+.head{
+
+    background-image: linear-gradient(#5cc6fff3, #5cc6ff10);
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+.navigate{
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
+    margin-left: 1.4vw;
+}
+
+/* .head ul{
+    display: flex;
+    margin: 1px;
+    padding: 1px;
+} */
+
+/* .head ul li{
+    list-style: none;
+    padding: 12px;
+    padding-right: 18px;
+} */
+
+.logo img{
+    height: 50px;
+    width: 50px;
+}
+/* introduction */
+#intro{
+    display: flex;
+    justify-content: space-around;
+    font-size: 20px;
+    margin-top: 10vw;
+    text-align: center;
+}
+#in{ 
+    background-color: var(--main);
+    width: 30vw;
+    height: 25vw;
+    /* border: 3px solid var(--border); */
+    border-radius: 6px;
+    box-shadow: inset 0.15em 0.15em 0.15em rgba(29, 131, 179, 0.959),
+    inset -0.15em -0.15em 0.15em rgba(29, 131, 179, 0.959),
+    0.3rem 0.3rem 1.5rem rgba(29, 131, 179, 0.959),
+    -0.3rem 0rem 1.5rem  rgba(29, 131, 179, 0.959);
+}
+
+
+::placeholder{
+    text-align: center;
+    /* font-weight: bold; */
+    /* color: black; */
+}
+
+.playername{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid #043aff;
+    background-color: var(--main);
+    /* opacity: 0.25; */
+    border-radius: 2.6px;
+    height: 2vw;
+}
+#startbtn{
+    margin: 20px 0px;
+    display: flex;
+    justify-content: center;
+}
+#startGame{
+    background-color: cyan;
+    border: 1px;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+/* game */
+
+
+
+
+
+.gameContainer{
+    display: flex;
+    justify-content: space-around;
+    /* flex-wrap: wrap; */ 
+    margin-top: 7vh;   
+}
+
+.container{
+    display: grid;
+    grid-template-rows: repeat(3,10vw);   
+    grid-template-columns: repeat(3,10vw);   
+    /* padding-top: 35px;  */
+    margin-right: 20px;
+    margin-left: 20px;
+    
+    
+}
+
+.box{
+    border: 2px solid rgb(0, 0, 0);
+    font-size: 8vw;
+    display: flex;
+    justify-content: center;
+    font-family: 'Nanum Brush Script', cursive;
+}
+.abc{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--main);
+    border-radius: 14px;
+    /* border: 2px solid var(--border); */
+    box-shadow: inset 0.15em 0.15em 0.15em rgba(29, 131, 179, 0.959),
+    inset -0.15em -0.15em 0.15em rgba(29, 131, 179, 0.959),
+    0.3rem 0.3rem 1.5rem rgba(29, 131, 179, 0.959),
+    -0.3rem 0rem 1.5rem  rgba(29, 131, 179, 0.959);
+}
+
+.box:hover{
+    background-color: var(--border);
+}
+
+.bt-0{
+    border-top: 0;
+}
+.bl-0{
+    border-left: 0;
+}
+.bb-0{
+    border-bottom: 0;
+}
+.br-0{
+    border-right: 0;
+}
+
+
+
+.gameInfo{
+    padding: 28px;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--main);
+    /* border: 2px solid var(--border); */
+    box-shadow: inset 0.15em 0.15em 0.15em rgba(29, 131, 179, 0.959),
+    inset -0.15em -0.15em 0.15em rgba(29, 131, 179, 0.959),
+    0.3rem 0.3rem 1.5rem rgba(29, 131, 179, 0.959),
+    -0.3rem 0rem 1.5rem  rgba(29, 131, 179, 0.959);
+}
+
+.gameInfo {
+    font-family: 'Outfit', sans-serif;
+    font-size: 25px;
+    text-align: center;
+    border-radius: 14px;
+    width: 30vw;
+}
+
+
+
+#info{
+    display: flex;
+    justify-content: center;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    font-size: 20px;
+}
+
+#reset{
+    padding:8px  20px;
+    margin: 0px 13px;
+    border-radius: 5px;
+    background-color: rgb(210, 237, 238);
+    align-self: center;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'Merriweather', serif;
+    box-shadow: 2px 2px  3px #888888;
+}
+#reset:hover{
+    padding:9px  25px;
+    margin: 0px 13px;
+    box-shadow: 2px 2px  3px #888888;
+}
+.btn{
+    margin: 3vw;
+    align-self: center;
+}
+
+#cogradulation{
+    width: 0px;
+    align-self: center;
+    /* transition: width 60ms; */
+    height: 200px; 
+    /* width: 200px;    */
+}
+.congrats img{
+    align-self: center;
+    
+    /* transition: width 60ms; */
+    height: 200px; 
+    width: 135px;
+    
+}
+#xogif{
+    position: relative;
+    left: 1vw;
+}
+
+/* #cograts1{
+    position: absolute;
+    z-index: -1;
+} */
+/* for responsive  */
+@media   screen and (max-width: 750px) {
+    .gameContainer{  
+        flex-wrap: wrap;
+    }
+    .abc{
+        width: 159%;
+        display: flex;
+        justify-content: center;
+        height: 130%;
+        width: 130%;
+    }
+    .navigate{
+        font-size: 20px;
+    }
+    .logo img{
+        height: 35px;
+        width: 35px;
+    }
+    
+  }

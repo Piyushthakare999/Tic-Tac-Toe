@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac | home</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Nanum+Brush+Script&family=Outfit&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <nav class="head">
+        <div class="logo">
+            <img src="/assets/NicePng_xo-png_2996108.png" alt="">
+        </div>
+        <div class="navigate">
+            Tic Tac game
+        </div>
+    </nav>
+    <div id="intro">
+        <div id="in">
+            <h4>Welcome to XO game</h4>
+            <p>Enter player 1 name</p>
+            <input type="text" id="p1" class="playername" placeholder="player 1">
+            <p>Enter player name</p>
+            <input type="text" id="p2" class="playername" placeholder="player 2">
+            <div id="startbtn">
+                <input type="button" id="startGame" value="Start game" onclick="start()">
+            </div>
+        </div>
+    </div>
+    <div class="gameContainer">
+        <div class="gameInfo">
+            <h4>Welcome to XO game</h4>
+            <div>
+                <span id="info">
+                    Turn for X
+                </span>
+            </div>
+            <div class="congrats">
+                <img id="xogif" src="/assets/giphy5.gif" alt="">
+                <!-- <img id="cograts1" src="/assets/giphy.gif" alt=""> -->
+                <img id="cogradulation" src="/assets/giphy 4.gif" alt="">
+            </div>
+            <div class="btn">
+                <input type="button" value="Reset" id="reset" onclick="reset()">
+            </div>
+        </div>
+        <div class="abc">
+            <div class="container">
+
+                <div class="box bt-0 bl-0"><span class="boxText"></span></div>
+                <div class="box bt-0"><span class="boxText"></span></div>
+                <div class="box bt-0 br-0"><span class="boxText"></span></div>
+                <div class="box bl-0"><span class="boxText"></span></div>
+                <div class="box"><span class="boxText"></span></div>
+                <div class="box br-0"><span class="boxText"></span></div>
+                <div class="box bl-0 bb-0"><span class="boxText"></span></div>
+                <div class="box bb-0"><span class="boxText"></span></div>
+                <div class="box bb-0 br-0"><span class="boxText"></span></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/main.js"></script>
+</body>
+
+</html>
