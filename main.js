@@ -1,7 +1,7 @@
 let turn = "X";
 let gameover = false;
-let winaudio = new Audio('/Tic-Tac-Toe/winaudio.mp3')
-let clickaudio = new Audio('/Tic-Tac-Toe/click.wav')
+let winaudio = new Audio('winaudio.mp3')
+let clickaudio = new Audio('click.wav')
 document.querySelector(".gameContainer").style.display = "none";
 
 
