@@ -37,7 +37,7 @@ function checkWin(p1, p2) {
         // e=each element of win in loop 
         // e[0]=0,3,6,0,1...(first element of each array of win)
         // boxtext[n]=nth box having class boxText
-        if ((boxtext[e[0]].innerText === boxtext[e[1]].innerText) && (boxtext[e[2]].innerText === boxtext[e[1]].innerText) && (boxtext[e[0]].innerText !== "")) {
+        if ((boxtext[e[0]].innerText === boxtext[e[1]].innerText) && (boxtext[e[2]].innerText === boxtext[e[1]].innerText) && (boxtext[e[0]].innerText !== "") && gameover===false) {
             var winner;
             if (turn === "X") {
                 winner = p2;
@@ -77,7 +77,8 @@ Array.from(boxes).forEach(element => {
             checkWin(p1, p2);
             draw();
             if (!gameover) {
-                document.querySelector(".info").innerText = "Turn for " + name;
+                document.getElementById("info").innerText = "Turn for " + name;
+                // console.log(name)
             }
         }
     })
@@ -105,8 +106,10 @@ x.forEach(element=>{
     }
 })
 
-if(cnt===9){
+if(cnt===9 && gameover===false){
     document.getElementById("info").innerText = "Match Tied" ;
+    // alert('vf/\')
+    gameover=true
 
 }
 
@@ -138,12 +141,18 @@ function reset() {
 function start() {
     // var p1 =document.querySelector('#p1').value;
     // var p2 =document.querySelector('#p2').value;
+    let in1=document.getElementById('p1').value;
+    let in2=document.getElementById('p2').value;
+    if(in1 !=='' && in2!==''){
     document.getElementById("intro").style.display = "none";
     document.querySelector(".gameContainer").style.display = "flex";
     var p1 = document.querySelector('#p1').value;
     document.getElementById("info").innerText = "Turn for " + p1;
     // alert(p1)
-
+    }
+    else{
+        alert('Please enter valid names')
+    }
 
     // alert('fe')
 }
