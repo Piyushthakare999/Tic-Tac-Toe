@@ -3,7 +3,7 @@ let gameover = false;
 let winaudio = new Audio('winaudio.mp3')
 let clickaudio = new Audio('click.wav')
 document.querySelector(".gameContainer").style.display = "none";
-
+let gametie=new Audio('mixkit-arcade-retro-changing-tab-206.wav')
 
 
 // function for changing turn
@@ -96,7 +96,8 @@ x.forEach(element=>{
 })
 
 if(cnt===9 && gameover===false){
-    document.getElementById("info").innerText = "Match Tied" ;
+    document.getElementById("info").innerText = "Match Tied \n Try again" ;
+    gametie.play()
     // alert('vf/\')
     gameover=true
 
