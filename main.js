@@ -48,7 +48,7 @@ function checkWin(p1, p2) {
             document.getElementById('cogradulation').style.width = '250px';
             document.getElementById('xogif').style.width = '0px';
 
-            document.querySelector('#info').style.fontSize = '3vw';
+            document.querySelector('#info').style.fontSize = '35px';
             document.querySelector('#info').style.paddingTop = '2px';
             document.querySelector('#info').style.paddingBottom = '2px';
             document.querySelector('#info').style.color = 'rgb(255 24 24)';
@@ -89,17 +89,6 @@ function draw(){
     let cnt=0;
     // let i=0;
 let x = document.querySelectorAll(".box");
-// let boxtex   = element.querySelector('.boxText');
-    // console.log(x[0].innerText)
-
-// while(i<10){
-//     if(x[i].innerText !== ""){
-//         cnt++
-//         // console.log(cnt)
-//     }
-//     // console.log(x[i])
-//     i++;
-// }
 x.forEach(element=>{
     if(element.innerText !==''){
         cnt++
@@ -151,7 +140,8 @@ function start() {
     // alert(p1)
     }
     else{
-        alert('Please enter valid names')
+        // alert('Please enter valid names')
+        document.getElementById('errmsg').innerText='Please enter valid names';
     }
 
     // alert('fe')
