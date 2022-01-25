@@ -1,3 +1,5 @@
+
+/* Code by piyush thakare */
 body{
     padding: 0;
     margin: 0;
@@ -43,6 +45,7 @@ body{
     width: 50px;
     padding: 10px;
 }
+
 /* introduction */
 #intro{
     display: flex;
@@ -54,9 +57,6 @@ body{
 }
 #in{ 
     background-color: var(--main);
-    /* width: 30vw;
-    height: 25vw; */
-    /* border: 3px solid var(--border); */
     padding: 3rem;
     padding-left: 5rem;
     padding-right: 5rem;
@@ -70,8 +70,6 @@ body{
 
 ::placeholder{
     text-align: center;
-    /* font-weight: bold; */
-    /* color: black; */
 }
 
 .playername{
@@ -80,7 +78,6 @@ body{
     border-right: none;
     border-bottom: 2px solid var(--secondary);
     background-color: var(--main);
-    /* opacity: 0.25; */
     border-radius: 2.6px;
     height: 25px;
 }
@@ -109,34 +106,37 @@ body{
 /* game */
 
 
-
-
-
 .gameContainer{
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap; 
-    margin-top: 7vh;   
+    margin-top: 7vh; 
+    position: relative;  
 }
 
 .container{
     display: grid;
     grid-template-rows: repeat(3,10vw);   
     grid-template-columns: repeat(3,10vw);   
-    /* padding-top: 35px;  */
     margin-right: 20px;
     margin-left: 20px;
     
     
 }
-
+.line{
+    background-color:black;
+    height: 0.3vw;
+    width: 0vw;
+    position: absolute;
+    transition: width 1s cubic-bezier(0.33, 0.01, 0.05, 0.96);
+}
 .box{
-    border: 2px solid rgb(0, 0, 0);
-    font-size: 8vw;
+    border: 0.2vw solid rgb(0, 0, 0);
+    font-size: 10vw;
     display: flex;
     justify-content: center;
     font-family: 'Nanum Brush Script', cursive;
-    cursor: pointer;
+    cursor: pointer; 
 }
 .abc{
     display: flex;
@@ -177,7 +177,6 @@ body{
     flex-direction: column;
     justify-content: center;
     background-color: var(--main);
-    /* border: 2px solid var(--border); */
     box-shadow: inset 0.15em 0.15em 0.15em rgba(29, 131, 179, 0.959),
     inset -0.15em -0.15em 0.15em rgba(29, 131, 179, 0.959),
     0.3rem 0.3rem 1.5rem rgba(29, 131, 179, 0.959),
@@ -218,9 +217,6 @@ body{
     1.7px 1.7px 0.6rem  rgba(29, 131, 179, 0.959);
 }
 #reset:hover{
-    /* padding:9px  25px;
-    margin: 0px 13px; */
-    /* box-shadow: 2px 2px  3px #888888; */
     background-color:#10a9fb ;
 }
 .btn{
@@ -228,18 +224,13 @@ body{
     align-self: center;
 }
 
-#cogradulation{
+#congradulation{
     width: 0px;
     align-self: center;
-    /* transition: width 60ms; */
     height: 200px; 
-    /* width: 200px;    */
 }
 .congrats img{
     align-self: center;
-    
-    /* transition: width 60ms; */
-    /* height: 200px;  */
     width: 135px;
     
 }
@@ -248,10 +239,7 @@ body{
     left: 1vw;
 }
 
-/* #cograts1{
-    position: absolute;
-    z-index: -1;
-} */
+
 /* for responsive  */
 @media   screen and (max-width: 750px) {
     /* .gameContainer{  

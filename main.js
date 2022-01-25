@@ -1,3 +1,4 @@
+// Code by piyush thakare
 let turn = "X";
 let gameover = false;
 let winaudio = new Audio('winaudio.mp3')
@@ -24,14 +25,14 @@ function changeturn() {
 function checkWin(p1, p2) {
     let boxtext = document.getElementsByClassName('boxText');
     let win = [
-        [0, 1, 2],
-        [3, 4, 5],
-        [6, 7, 8],
-        [0, 3, 6],
-        [1, 4, 7],
-        [2, 5, 8],
-        [0, 4, 8],
-        [2, 4, 6],
+        [0, 1, 2, 2.5, 5, 0],
+        [3, 4, 5, 2.5, 15, 0],
+        [6, 7, 8, 2.5, 25, 0],
+        [0, 3, 6, -7.5, 15, 90],
+        [1, 4, 7, 2.5, 15, 90],
+        [2, 5, 8, 12.5, 15, 90],
+        [0, 4, 8, 2.5, 15, 45],
+        [2, 4, 6, 2.5, 15, 135],
     ]
     win.forEach(e => {
         // e=each element of win in loop 
@@ -45,7 +46,7 @@ function checkWin(p1, p2) {
             else { winner = p1; }
             document.querySelector('#info').innerText = winner + ' won';
             gameover = true
-            document.getElementById('cogradulation').style.width = '250px';
+            document.getElementById('congradulation').style.width = '250px';
             document.getElementById('xogif').style.width = '0px';
 
             document.querySelector('#info').style.fontSize = '35px';
@@ -53,12 +54,14 @@ function checkWin(p1, p2) {
             document.querySelector('#info').style.paddingBottom = '2px';
             document.querySelector('#info').style.color = 'rgb(255 24 24)';
             document.querySelector('.container').style.pointerEvents = "none";
+            document.querySelector('.line').style.transform= `translate( ${e[3]}vw ,${e[4]}vw) rotate(${e[5]}deg)`;
+            document.querySelector('.line').style.width='25vw';
             winaudio.play();
         }
     })
 }
 
-//  
+//  main logic
 let boxes = document.getElementsByClassName("box");
 Array.from(boxes).forEach(element => {
     let boxtext = element.querySelector('.boxText');
@@ -78,16 +81,15 @@ Array.from(boxes).forEach(element => {
             draw();
             if (!gameover) {
                 document.getElementById("info").innerText = "Turn for " + name;
-                // console.log(name)
             }
         }
     })
 });
 
+// founction for tied match
 function draw(){
     
     let cnt=0;
-    // let i=0;
 let x = document.querySelectorAll(".box");
 x.forEach(element=>{
     if(element.innerText !==''){
@@ -98,15 +100,14 @@ x.forEach(element=>{
 if(cnt===9 && gameover===false){
     document.getElementById("info").innerText = "Match Tied \n Try again" ;
     gametie.play()
-    // alert('vf/\')
     gameover=true
 
 }
 
 }
+
 // reset btn
 function reset() {
-    // alert('dds')
     let boxtext = document.querySelectorAll('.boxText');
     Array.from(boxtext).forEach(element => {
         element.innerText = ""
@@ -114,12 +115,13 @@ function reset() {
     turn = "X"
     gameover = false
     document.getElementById("info").innerText = "Turn for " + turn;
-    document.getElementById('cogradulation').style.width = '0px';
+    document.getElementById('congradulation').style.width = '0px';
     document.getElementById('xogif').style.width = '135px';
     document.querySelector('#info').style.fontSize = '20px';
     document.querySelector('#info').style.color = 'black';
     document.querySelector('#info').style.paddingTop = '14px';
     document.querySelector('#info').style.paddingBottom = '14px';
+    document.querySelector('.line').style.width='0vw';
     var p1 = document.querySelector('#p1').value;
     document.getElementById("info").innerText = "Turn for " + p1;
     document.querySelector('.container').style.pointerEvents = "auto";
@@ -129,8 +131,6 @@ function reset() {
 //  taking name
 
 function start() {
-    // var p1 =document.querySelector('#p1').value;
-    // var p2 =document.querySelector('#p2').value;
     let in1=document.getElementById('p1').value;
     let in2=document.getElementById('p2').value;
     if(in1 !=='' && in2!==''){
@@ -138,12 +138,10 @@ function start() {
     document.querySelector(".gameContainer").style.display = "flex";
     var p1 = document.querySelector('#p1').value;
     document.getElementById("info").innerText = "Turn for " + p1;
-    // alert(p1)
     }
     else{
         // alert('Please enter valid names')
         document.getElementById('errmsg').innerText='Please enter valid names';
     }
 
-    // alert('fe')
 }
