@@ -92,6 +92,7 @@ body{
     justify-content: center;
 }
 #startGame{
+    cursor: pointer;
     background-color: cyan;
     border: 1px;
     padding: 10px;
@@ -101,6 +102,9 @@ body{
     inset -0.15em -0.15em 0.15em rgba(29, 131, 179, 0.959),
     1.7px 1.7px 0.6rem rgba(29, 131, 179, 0.959),
     1.7px 1.7px 0.6rem  rgba(29, 131, 179, 0.959);
+}
+#startGame:hover{
+    background-color: #1cafff;
 }
 
 /* game */
@@ -264,10 +268,12 @@ body{
         width: 60%;
     }
     .abc{
-        width: 56%;
+        width: 60%;
         flex-direction: row;
         margin-top: 30px;
         padding: 30px;
     }
-    
+    .congrats{
+        display: none;
+    }
   }
